@@ -1,0 +1,24 @@
+#customhosts
+#inventory of VMs for trexza
+[db]
+192.168.61.11 ansible_ssh_user=vagrant
+
+[www]
+192.168.61.12 ansible_ssh_user=vagrant 
+
+[lb]
+192.168.61.13 
+
+[app]
+192.168.61.14 ansible_ssh_user=vagrant consul_server_ip="192.168.61.100" consul_extra=""
+192.168.61.15 ansible_ssh_user=vagrant consul_server_ip="192.168.61.100" consul_extra=""
+
+[control]
+192.168.61.100 consul_extra="-server -bootstrap -ui-dir /data/consul/ui"
+
+[awscontrol]
+192.168.61.200 consul_extra="-server -bootstrap -ui-dir /data/consul/ui"
+
+#[consul]
+#192.168.61.100 consul_extra="-server -bootstrap -ui-dir /ui"
+#192.168.61.14 consul_server_ip="192.168.61.100"
